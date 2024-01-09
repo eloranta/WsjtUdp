@@ -109,17 +109,17 @@ void Udp::status(QDataStream &stream)
     uint len;
     char *raw;
     stream.readBytes(raw, len);
-    QString Id = QString::fromUtf8(raw, len);
+    QString Id = QString::fromUtf8(raw, static_cast<int>(len));
     quint64 Dial_frequency;
     stream >> Dial_frequency;
     stream.readBytes(raw, len);
-    QString Mode = QString::fromUtf8(raw, len);
+    QString Mode = QString::fromUtf8(raw, static_cast<int>(len));
     stream.readBytes(raw, len);
-    QString Dx_call = QString::fromUtf8(raw, len);
+    QString Dx_call = QString::fromUtf8(raw, static_cast<int>(len));
     stream.readBytes(raw, len);
-    QString Report = QString::fromUtf8(raw, len);
+    QString Report = QString::fromUtf8(raw, static_cast<int>(len));
     stream.readBytes(raw, len);
-    QString Tx_mode = QString::fromUtf8(raw, len);
+    QString Tx_mode = QString::fromUtf8(raw, static_cast<int>(len));
     bool Tx_Enabled;
     bool Transmitting;
     bool Decoding;
@@ -132,11 +132,11 @@ void Udp::status(QDataStream &stream)
     quint32 Rx_df;
     stream >> Tx_df >> Rx_df;
     stream.readBytes(raw, len);
-    QString Call = QString::fromUtf8(raw, len);
+    QString Call = QString::fromUtf8(raw, static_cast<int>(len));
     stream.readBytes(raw, len);
-    QString Grid = QString::fromUtf8(raw, len);
+    QString Grid = QString::fromUtf8(raw, static_cast<int>(len));
     stream.readBytes(raw, len);
-    QString DxGrid = QString::fromUtf8(raw, len);
+    QString DxGrid = QString::fromUtf8(raw, static_cast<int>(len));
 
     qDebug() << "        " << "txdf =" << Tx_df << "rxdf =" << Rx_df << "mycall =" << Call << "mygrid =" << Grid << "dxgrid =" << DxGrid;
 
@@ -149,8 +149,8 @@ void Udp::status(QDataStream &stream)
     if (count < 0xffffffff)
     {
         raw = new char[count];
-        stream.readRawData(raw, count);
-        SubMode = QString::fromUtf8(raw, count);
+        stream.readRawData(raw, static_cast<int>(count));
+        SubMode = QString::fromUtf8(raw, static_cast<int>(count));
         delete [] raw;
     }
 
@@ -175,10 +175,10 @@ void Udp::status(QDataStream &stream)
         qDebug() << "        " << "TRPeriod =" << TRPeriod;
 
     stream.readBytes(raw, len);
-    QString ConfigurationName = QString::fromUtf8(raw, len);
+    QString ConfigurationName = QString::fromUtf8(raw, static_cast<int>(len));
 
     stream.readBytes(raw, len);
-    QString TxMessage = QString::fromUtf8(raw, len);
+    QString TxMessage = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "        " << "ConfigurationName =" << ConfigurationName << "TxMessage =" << TxMessage;
 }
 
@@ -231,7 +231,7 @@ void Udp::clear(QDataStream &stream)
     uint len;
     char *raw;
     stream.readBytes(raw, len);
-    QString Id = QString::fromUtf8(raw, len);
+    QString Id = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "Clear: Id =" << Id;
 }
 
@@ -240,7 +240,7 @@ void Udp::qsoLogged(QDataStream &stream)
     uint len;
     char *raw;
     stream.readBytes(raw, len);
-    QString Id = QString::fromUtf8(raw, len);
+    QString Id = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "qsoLogged: Id =" << Id;
 
     QDateTime DateTimeOff;
@@ -248,11 +248,11 @@ void Udp::qsoLogged(QDataStream &stream)
     qDebug() << "DateTimeOff =" << DateTimeOff;
 
     stream.readBytes(raw, len);
-    QString DXcall = QString::fromUtf8(raw, len);
+    QString DXcall = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "DXcall =" << DXcall;
 
     stream.readBytes(raw, len);
-    QString DXgrid = QString::fromUtf8(raw, len);
+    QString DXgrid = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "DXgrid =" << DXgrid;
 
     quint64 TxFrequency;
@@ -260,27 +260,27 @@ void Udp::qsoLogged(QDataStream &stream)
     qDebug() << "TxFrequency =" << TxFrequency;
 
     stream.readBytes(raw, len);
-    QString Mode = QString::fromUtf8(raw, len);
+    QString Mode = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "Mode =" << Mode;
 
     stream.readBytes(raw, len);
-    QString ReportSent = QString::fromUtf8(raw, len);
+    QString ReportSent = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "ReportSent =" << ReportSent;
 
     stream.readBytes(raw, len);
-    QString ReportReceived = QString::fromUtf8(raw, len);
+    QString ReportReceived = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "ReportReceived =" << ReportReceived;
 
     stream.readBytes(raw, len);
-    QString TxPower = QString::fromUtf8(raw, len);
+    QString TxPower = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "TxPower =" << TxPower;
 
     stream.readBytes(raw, len);
-    QString Comments = QString::fromUtf8(raw, len);
+    QString Comments = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "Comments =" << Comments;
 
     stream.readBytes(raw, len);
-    QString Name = QString::fromUtf8(raw, len);
+    QString Name = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "Name =" << Name;
 
     QDateTime DateTimeOn;
@@ -288,27 +288,27 @@ void Udp::qsoLogged(QDataStream &stream)
     qDebug() << "DateTimeOn =" << DateTimeOn;
 
     stream.readBytes(raw, len);
-    QString OperatorCall = QString::fromUtf8(raw, len);
+    QString OperatorCall = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "OperatorCall =" << OperatorCall;
 
     stream.readBytes(raw, len);
-    QString MyCall = QString::fromUtf8(raw, len);
+    QString MyCall = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "MyCall =" << MyCall;
 
     stream.readBytes(raw, len);
-    QString MyGrid = QString::fromUtf8(raw, len);
+    QString MyGrid = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "MyGrid =" << MyGrid;
 
     stream.readBytes(raw, len);
-    QString ExchangeSent = QString::fromUtf8(raw, len);
+    QString ExchangeSent = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "ExchangeSent =" << ExchangeSent;
 
     stream.readBytes(raw, len);
-    QString ExchangeReceived = QString::fromUtf8(raw, len);
+    QString ExchangeReceived = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "ExchangeReceived =" << ExchangeReceived;
 
     stream.readBytes(raw, len);
-    QString ADIFPropagationMode = QString::fromUtf8(raw, len);
+    QString ADIFPropagationMode = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "ADIFPropagationMode =" << ADIFPropagationMode;
 }
 
@@ -317,7 +317,7 @@ void Udp::close(QDataStream &stream)
     uint len;
     char *raw;
     stream.readBytes(raw, len);
-    QString Id = QString::fromUtf8(raw, len);
+    QString Id = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "Close: Id =" << Id;
 }
 
@@ -326,9 +326,9 @@ void Udp::loggedADIF(QDataStream &stream)
     uint len;
     char *raw;
     stream.readBytes(raw, len);
-    QString Id = QString::fromUtf8(raw, len);
+    QString Id = QString::fromUtf8(raw, static_cast<int>(len));
     stream.readBytes(raw, len);
-    QString text = QString::fromUtf8(raw, len);
+    QString text = QString::fromUtf8(raw, static_cast<int>(len));
     qDebug() << "loggedADIF: Id =" << Id << "text:" << text;
 }
 
