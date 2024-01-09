@@ -69,11 +69,12 @@ void Udp::ParseMessage(QByteArray& buffer)
         //clear(stream);
         break;
     case QSOLogged:
-        qDebug() << "QSOLogged";
-        qsoLogged(stream);
+        //qDebug() << "QSOLogged";
+        //qsoLogged(stream);
         break;
     case Close:
-        qDebug() << "Close";
+        //qDebug() << "Close";
+        close(stream);
         break;
     case WSPRDecode:
         qDebug() << "WSPRDecode";
@@ -308,6 +309,15 @@ void Udp::qsoLogged(QDataStream &stream)
     stream.readBytes(raw, len);
     QString ADIFPropagationMode = QString::fromUtf8(raw, len);
     qDebug() << "ADIFPropagationMode =" << ADIFPropagationMode;
+}
+
+void Udp::close(QDataStream &stream)
+{
+    uint len;
+    char *raw;
+    stream.readBytes(raw, len);
+    QString Id = QString::fromUtf8(raw, len);
+    qDebug() << "Close: Id =" << Id;
 }
 
 
