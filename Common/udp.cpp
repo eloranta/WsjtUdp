@@ -327,7 +327,9 @@ void Udp::loggedADIF(QDataStream &stream)
     char *raw;
     stream.readBytes(raw, len);
     QString Id = QString::fromUtf8(raw, len);
-    qDebug() << "loggedADIF: Id =" << Id;
+    stream.readBytes(raw, len);
+    QString text = QString::fromUtf8(raw, len);
+    qDebug() << "loggedADIF: Id =" << Id << "text:" << text;
 }
 
 
