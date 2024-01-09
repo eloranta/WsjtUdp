@@ -15,6 +15,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+public slots:
+    void MessageReceived(const QString& message);
 
 private:
     Ui::MainWindow *ui;

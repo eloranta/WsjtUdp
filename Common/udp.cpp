@@ -62,7 +62,7 @@ void Udp::ParseMessage(QByteArray& buffer)
         break;
     case Decode:
         //qDebug() << "Decode";
-        //decode(stream);
+        decode(stream);
         break;
     case Clear:
         //qDebug() << "Clear";
@@ -205,25 +205,7 @@ void Udp::decode(QDataStream &stream)
     QString message = QString::fromUtf8(raw, static_cast<int>(len));
     //qDebug() << "Message:" << message;
 
-    QStringList list = message.split(" ");
-
-    QString caller = list[1];
-    if (caller.isEmpty())
-        return;
-    if (caller.length() < 3)
-        return;
-    if (caller == "RR73"|| caller == "RR73;" || caller == "...")
-        return;
-    if (caller == "USA" || caller == "VOTA")
-        caller = list[2];
-
-    if (!caller.isEmpty() && caller.front() == '<' && caller.back() == '>')
-    {
-        caller = caller.remove(0, 1);
-        if (!caller.isEmpty()) caller.chop(1);
-    }
-
-    qDebug() << caller;
+    MessageReceived(message);
 }
 
 void Udp::clear(QDataStream &stream)
