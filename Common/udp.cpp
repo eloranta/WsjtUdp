@@ -8,7 +8,7 @@
 #include <QJsonObject>
 #include "QRegularExpression"
 
-udp::udp(QObject *parent) : QObject(parent)
+Udp::Udp(QObject *parent) : QObject(parent)
 {
 //    ReadDxccJson();
     socket = new QUdpSocket(this);
@@ -39,7 +39,7 @@ udp::udp(QObject *parent) : QObject(parent)
 ////    array = value.toArray();
 //}
 
-void udp::readyRead()
+void Udp::readyRead()
 {
     QByteArray buffer;
     buffer.resize(static_cast<int>(socket->pendingDatagramSize()));
@@ -55,7 +55,7 @@ void udp::readyRead()
     ParseMessage(buffer);
 }
 
-void udp::ParseMessage(QByteArray& buffer)
+void Udp::ParseMessage(QByteArray& buffer)
 {
     //qDebug() << "Message: " << buffer;
 
@@ -113,7 +113,7 @@ void udp::ParseMessage(QByteArray& buffer)
     }
 }
 
-void udp::decode(QDataStream &stream)
+void Udp::decode(QDataStream &stream)
 {
     uint len;
     char *raw;

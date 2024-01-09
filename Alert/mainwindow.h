@@ -18,6 +18,6 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    udp udp;
+    Udp udp;
 };
 #endif // MAINWINDOW_H

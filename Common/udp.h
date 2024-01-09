@@ -3,7 +3,7 @@
 
 #include <QUdpSocket>
 
-class udp : public QObject
+class Udp : public QObject
 {
     Q_OBJECT
 private:
@@ -32,7 +32,7 @@ private:
     void ParseMessage(QByteArray& buffer);
     void decode(QDataStream &stream);
 public:
-    explicit udp(QObject *parent = nullptr);
+    explicit Udp(QObject *parent = nullptr);
 signals:
 
 public slots:
