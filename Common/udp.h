@@ -1,7 +1,6 @@
 #ifndef udp_h
 #define udp_h
 
-#include <QObject>
 #include <QUdpSocket>
 
 class udp : public QObject
