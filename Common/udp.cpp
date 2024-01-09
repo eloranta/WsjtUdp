@@ -54,7 +54,7 @@ void Udp::ParseMessage(QByteArray& buffer)
     {
     case Heartbeat:
         //qDebug() << "Heartbeat";
-        heartbeat(stream);
+        //heartbeat(stream);
         break;
     case Status:
         //qDebug() << "Status";
@@ -66,7 +66,7 @@ void Udp::ParseMessage(QByteArray& buffer)
         break;
     case Clear:
         //qDebug() << "Clear";
-        clear(stream);
+        //clear(stream);
         break;
     case QSOLogged:
         qDebug() << "QSOLogged";
@@ -229,7 +229,7 @@ void Udp::clear(QDataStream &stream)
     char *raw;
     stream.readBytes(raw, len);
     QString Id = QString::fromUtf8(raw, len);
-    qDebug() << "Clear: Id =" << Id << "window =";
+    qDebug() << "Clear: Id =" << Id;
 }
 
 
