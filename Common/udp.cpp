@@ -54,10 +54,11 @@ void Udp::ParseMessage(QByteArray& buffer)
     {
     case Heartbeat:
         //qDebug() << "Heartbeat";
-        Heartbeat1(stream);
+        //Heartbeat1(stream);
         break;
     case Status:
         //qDebug() << "Status";
+        status(stream);
         break;
     case Decode:
         //qDebug() << "Decode";
@@ -99,6 +100,83 @@ void Udp::Heartbeat1(QDataStream &stream)
     qDebug() << "Heartbeat: " << "Id =" << Id << "Maximum_schema_number =" << Maximum_schema_number << "Version =" << Version << "Revision =" << Revision;
 }
 
+void Udp::status(QDataStream &stream)
+{
+    uint len;
+    char *raw;
+    stream.readBytes(raw, len);
+    QString Id = QString::fromUtf8(raw, len);
+    quint64 Dial_frequency;
+    stream >> Dial_frequency;
+    stream.readBytes(raw, len);
+    QString Mode = QString::fromUtf8(raw, len);
+    stream.readBytes(raw, len);
+    QString Dx_call = QString::fromUtf8(raw, len);
+    stream.readBytes(raw, len);
+    QString Report = QString::fromUtf8(raw, len);
+    stream.readBytes(raw, len);
+    QString Tx_mode = QString::fromUtf8(raw, len);
+    bool Tx_Enabled;
+    bool Transmitting;
+    bool Decoding;
+    stream >> Tx_Enabled >> Transmitting >> Decoding;
+
+    qDebug() << "Status: " << "Id =" << Id << "freq =" << Dial_frequency << "mode =" << Mode
+             << "dx call =" << Dx_call << "report =" << Report << "tx mode =" << Tx_mode << "tx enabled =" << Tx_Enabled
+             << "transmitting =" << Transmitting << "decoding =" << Decoding;
+    quint32 Tx_df;
+    quint32 Rx_df;
+    stream >> Tx_df >> Rx_df;
+    stream.readBytes(raw, len);
+    QString Call = QString::fromUtf8(raw, len);
+    stream.readBytes(raw, len);
+    QString Grid = QString::fromUtf8(raw, len);
+    stream.readBytes(raw, len);
+    QString DxGrid = QString::fromUtf8(raw, len);
+
+    qDebug() << "        " << "txdf =" << Tx_df << "rxdf =" << Rx_df << "mycall =" << Call << "mygrid =" << Grid << "dxgrid =" << DxGrid;
+
+    bool TxWatchdog;
+    stream >> TxWatchdog;
+
+    QString SubMode;
+    quint32 count;
+    stream >> count;
+    if (count < 0xffffffff)
+    {
+        raw = new char[count];
+        stream.readRawData(raw, count);
+        SubMode = QString::fromUtf8(raw, count);
+        delete [] raw;
+    }
+
+    bool FastMode;
+    stream >> FastMode;
+
+    qDebug() << "        " << "TxWatchdog =" << TxWatchdog <<  "SubMode =" << SubMode << "FastMode =" << FastMode;
+
+    quint8 SpecialOperationMode;
+    quint32 FrequencyTolerance;
+    quint32 TRPeriod;
+    stream >> SpecialOperationMode >> FrequencyTolerance >> TRPeriod;
+    qDebug() << "        " << "SpecialOperationMode =" << SpecialOperationMode;
+    if (FrequencyTolerance == 0xffffffff)
+        qDebug() << "        " << "FrequencyTolerance = 0xffffffff";
+    else
+        qDebug() << "        " << "FrequencyTolerance =" << FrequencyTolerance;
+
+    if (TRPeriod == 0xffffffff)
+        qDebug() << "        " << "TRPeriod = 0xffffffff";
+    else
+        qDebug() << "        " << "TRPeriod =" << TRPeriod;
+
+    stream.readBytes(raw, len);
+    QString ConfigurationName = QString::fromUtf8(raw, len);
+
+    stream.readBytes(raw, len);
+    QString TxMessage = QString::fromUtf8(raw, len);
+    qDebug() << "        " << "ConfigurationName =" << ConfigurationName << "TxMessage =" << TxMessage;
+}
 
 void Udp::decode(QDataStream &stream)
 {
