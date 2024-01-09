@@ -10,34 +10,34 @@
 
 udp::udp(QObject *parent) : QObject(parent)
 {
-    ReadDxccJson();
+//    ReadDxccJson();
     socket = new QUdpSocket(this);
     socket->bind(QHostAddress::LocalHost, 2237);
     connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
 }
 
-void udp::ReadDxccJson()
-{
-    QString jsonFile = qApp->applicationDirPath() + "/dxcc.json";
-    QFile file;
-    file.setFileName(jsonFile);
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
-    QString text = file.readAll();
-    file.close();
-    //qDebug() << text;
+//void udp::ReadDxccJson()
+//{
+//    QString jsonFile = qApp->applicationDirPath() + "/dxcc.json";
+//    QFile file;
+//    file.setFileName(jsonFile);
+//    file.open(QIODevice::ReadOnly | QIODevice::Text);
+//    QString text = file.readAll();
+//    file.close();
+//    //qDebug() << text;
 
-    QJsonDocument doc = QJsonDocument::fromJson(text.toUtf8());
-    if (doc.isNull())
-    {
-        qDebug() << "Error in parsing worked.json";
-        return;
-    }
-    //qDebug() << doc;
+//    QJsonDocument doc = QJsonDocument::fromJson(text.toUtf8());
+//    if (doc.isNull())
+//    {
+//        qDebug() << "Error in parsing worked.json";
+//        return;
+//    }
+//    //qDebug() << doc;
 
-    QJsonObject object = doc.object();
-    QJsonValue value = object.value("dxcc");
-    array = value.toArray();
-}
+////    QJsonObject object = doc.object();
+////    QJsonValue value = object.value("dxcc");
+////    array = value.toArray();
+//}
 
 void udp::readyRead()
 {
@@ -154,26 +154,24 @@ void udp::decode(QDataStream &stream)
         if (!caller.isEmpty()) caller.chop(1);
     }
 
-    QString country = FindCountry(caller);
-
-    std::cout << caller.toStdString() << "\t\t" << country.toStdString() << std::endl;
+    qDebug() << caller;
 }
 
-QString udp::FindCountry(QString& call)
-{
-    foreach (const QJsonValue & value, array)
-    {
-        QRegularExpression rx(value.toObject().value("prefixRegex").toString());
-        QRegularExpressionMatch match = rx.match(call);
-        if (match.hasMatch())
-        {
-            //dxcc = QString::number(value.toObject().value("entityCode").toInt());
-            return value.toObject().value("name").toString();
-            //continent = value.toObject().value("continent").toArray()[0].toString();
-        }
-    }
-    return "not found";
-}
+//QString udp::FindCountry(QString& call)
+//{
+//    foreach (const QJsonValue & value, array)
+//    {
+//        QRegularExpression rx(value.toObject().value("prefixRegex").toString());
+//        QRegularExpressionMatch match = rx.match(call);
+//        if (match.hasMatch())
+//        {
+//            //dxcc = QString::number(value.toObject().value("entityCode").toInt());
+//            return value.toObject().value("name").toString();
+//            //continent = value.toObject().value("continent").toArray()[0].toString();
+//        }
+//    }
+//    return "not found";
+//}
 
 
 

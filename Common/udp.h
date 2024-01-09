@@ -3,7 +3,6 @@
 
 #include <QObject>
 #include <QUdpSocket>
-#include <QJsonArray>
 
 class udp : public QObject
 {
@@ -31,11 +30,10 @@ private:
     };
 
     QUdpSocket *socket;
-    QJsonArray array;
     void ParseMessage(QByteArray& buffer);
     void decode(QDataStream &stream);
-    QString FindCountry(QString& call);
-    void ReadDxccJson();
+//    QString FindCountry(QString& call);
+//    void ReadDxccJson();
 public:
     explicit udp(QObject *parent = nullptr);
 signals:
