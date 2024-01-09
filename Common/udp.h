@@ -36,6 +36,8 @@ private:
     void clear(QDataStream &stream);
     void qsoLogged(QDataStream &stream);
     void close(QDataStream &stream);
+    void loggedADIF(QDataStream &stream);
+
 public:
     explicit Udp(QObject *parent = nullptr);
 signals:

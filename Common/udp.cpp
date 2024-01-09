@@ -80,7 +80,8 @@ void Udp::ParseMessage(QByteArray& buffer)
         qDebug() << "WSPRDecode";
         break;
     case LoggedADIF:
-        qDebug() << "LoggedADIF";
+        //qDebug() << "LoggedADIF";
+        loggedADIF(stream);
         break;
     default:
         qDebug() << "Unknown message number received: " << messageNumber;
@@ -320,6 +321,14 @@ void Udp::close(QDataStream &stream)
     qDebug() << "Close: Id =" << Id;
 }
 
+void Udp::loggedADIF(QDataStream &stream)
+{
+    uint len;
+    char *raw;
+    stream.readBytes(raw, len);
+    QString Id = QString::fromUtf8(raw, len);
+    qDebug() << "loggedADIF: Id =" << Id;
+}
 
 
 
