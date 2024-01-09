@@ -205,7 +205,8 @@ void Udp::decode(QDataStream &stream)
     QString message = QString::fromUtf8(raw, static_cast<int>(len));
     //qDebug() << "Message:" << message;
 
-    MessageReceived(message);
+    if (message.length() != 0)
+        MessageReceived(message);
 }
 
 void Udp::clear(QDataStream &stream)
