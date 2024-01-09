@@ -1,12 +1,5 @@
 #include "udp.h"
 #include <QDataStream>
-#include <QTime>
-#include <iostream>
-#include <QCoreApplication>
-#include <QFile>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include "QRegularExpression"
 
 Udp::Udp(QObject *parent) : QObject(parent)
 {
