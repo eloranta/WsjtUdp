@@ -1,36 +1,13 @@
 #include "udp.h"
 #include <QDataStream>
+#include <QTime>
 
 Udp::Udp(QObject *parent) : QObject(parent)
 {
-//    ReadDxccJson();
     socket = new QUdpSocket(this);
     socket->bind(QHostAddress::LocalHost, 2237);
     connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
 }
-
-//void udp::ReadDxccJson()
-//{
-//    QString jsonFile = qApp->applicationDirPath() + "/dxcc.json";
-//    QFile file;
-//    file.setFileName(jsonFile);
-//    file.open(QIODevice::ReadOnly | QIODevice::Text);
-//    QString text = file.readAll();
-//    file.close();
-//    //qDebug() << text;
-
-//    QJsonDocument doc = QJsonDocument::fromJson(text.toUtf8());
-//    if (doc.isNull())
-//    {
-//        qDebug() << "Error in parsing worked.json";
-//        return;
-//    }
-//    //qDebug() << doc;
-
-////    QJsonObject object = doc.object();
-////    QJsonValue value = object.value("dxcc");
-////    array = value.toArray();
-//}
 
 void Udp::readyRead()
 {
@@ -83,7 +60,7 @@ void Udp::ParseMessage(QByteArray& buffer)
         break;
     case Decode:
         //qDebug() << "Decode";
-        decode(stream);
+        //decode(stream);
         break;
     case Clear:
         qDebug() << "Clear";
@@ -149,22 +126,6 @@ void Udp::decode(QDataStream &stream)
 
     qDebug() << caller;
 }
-
-//QString udp::FindCountry(QString& call)
-//{
-//    foreach (const QJsonValue & value, array)
-//    {
-//        QRegularExpression rx(value.toObject().value("prefixRegex").toString());
-//        QRegularExpressionMatch match = rx.match(call);
-//        if (match.hasMatch())
-//        {
-//            //dxcc = QString::number(value.toObject().value("entityCode").toInt());
-//            return value.toObject().value("name").toString();
-//            //continent = value.toObject().value("continent").toArray()[0].toString();
-//        }
-//    }
-//    return "not found";
-//}
 
 
 
