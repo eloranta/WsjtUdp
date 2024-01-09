@@ -34,6 +34,7 @@ private:
     void status(QDataStream &stream);
     void decode(QDataStream &stream);
     void clear(QDataStream &stream);
+    void qsoLogged(QDataStream &stream);
 
 public:
     explicit Udp(QObject *parent = nullptr);

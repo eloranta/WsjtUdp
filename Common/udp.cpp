@@ -70,6 +70,7 @@ void Udp::ParseMessage(QByteArray& buffer)
         break;
     case QSOLogged:
         qDebug() << "QSOLogged";
+        qsoLogged(stream);
         break;
     case Close:
         qDebug() << "Close";
@@ -231,6 +232,85 @@ void Udp::clear(QDataStream &stream)
     QString Id = QString::fromUtf8(raw, len);
     qDebug() << "Clear: Id =" << Id;
 }
+
+void Udp::qsoLogged(QDataStream &stream)
+{
+    uint len;
+    char *raw;
+    stream.readBytes(raw, len);
+    QString Id = QString::fromUtf8(raw, len);
+    qDebug() << "qsoLogged: Id =" << Id;
+
+    QDateTime DateTimeOff;
+    stream >> DateTimeOff;
+    qDebug() << "DateTimeOff =" << DateTimeOff;
+
+    stream.readBytes(raw, len);
+    QString DXcall = QString::fromUtf8(raw, len);
+    qDebug() << "DXcall =" << DXcall;
+
+    stream.readBytes(raw, len);
+    QString DXgrid = QString::fromUtf8(raw, len);
+    qDebug() << "DXgrid =" << DXgrid;
+
+    quint64 TxFrequency;
+    stream >> TxFrequency;
+    qDebug() << "TxFrequency =" << TxFrequency;
+
+    stream.readBytes(raw, len);
+    QString Mode = QString::fromUtf8(raw, len);
+    qDebug() << "Mode =" << Mode;
+
+    stream.readBytes(raw, len);
+    QString ReportSent = QString::fromUtf8(raw, len);
+    qDebug() << "ReportSent =" << ReportSent;
+
+    stream.readBytes(raw, len);
+    QString ReportReceived = QString::fromUtf8(raw, len);
+    qDebug() << "ReportReceived =" << ReportReceived;
+
+    stream.readBytes(raw, len);
+    QString TxPower = QString::fromUtf8(raw, len);
+    qDebug() << "TxPower =" << TxPower;
+
+    stream.readBytes(raw, len);
+    QString Comments = QString::fromUtf8(raw, len);
+    qDebug() << "Comments =" << Comments;
+
+    stream.readBytes(raw, len);
+    QString Name = QString::fromUtf8(raw, len);
+    qDebug() << "Name =" << Name;
+
+    QDateTime DateTimeOn;
+    stream >> DateTimeOn;
+    qDebug() << "DateTimeOn =" << DateTimeOn;
+
+    stream.readBytes(raw, len);
+    QString OperatorCall = QString::fromUtf8(raw, len);
+    qDebug() << "OperatorCall =" << OperatorCall;
+
+    stream.readBytes(raw, len);
+    QString MyCall = QString::fromUtf8(raw, len);
+    qDebug() << "MyCall =" << MyCall;
+
+    stream.readBytes(raw, len);
+    QString MyGrid = QString::fromUtf8(raw, len);
+    qDebug() << "MyGrid =" << MyGrid;
+
+    stream.readBytes(raw, len);
+    QString ExchangeSent = QString::fromUtf8(raw, len);
+    qDebug() << "ExchangeSent =" << ExchangeSent;
+
+    stream.readBytes(raw, len);
+    QString ExchangeReceived = QString::fromUtf8(raw, len);
+    qDebug() << "ExchangeReceived =" << ExchangeReceived;
+
+    stream.readBytes(raw, len);
+    QString ADIFPropagationMode = QString::fromUtf8(raw, len);
+    qDebug() << "ADIFPropagationMode =" << ADIFPropagationMode;
+}
+
+
 
 
 
