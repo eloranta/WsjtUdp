@@ -30,6 +30,7 @@ private:
 
     QUdpSocket *socket;
     void ParseMessage(QByteArray& buffer);
+    void Heartbeat1(QDataStream &stream);
     void decode(QDataStream &stream);
 public:
     explicit Udp(QObject *parent = nullptr);

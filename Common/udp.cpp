@@ -54,6 +54,7 @@ void Udp::ParseMessage(QByteArray& buffer)
     {
     case Heartbeat:
         //qDebug() << "Heartbeat";
+        Heartbeat1(stream);
         break;
     case Status:
         //qDebug() << "Status";
@@ -82,6 +83,22 @@ void Udp::ParseMessage(QByteArray& buffer)
         break;
     }
 }
+
+void Udp::Heartbeat1(QDataStream &stream)
+{
+    uint len;
+    char *raw;
+    stream.readBytes(raw, len);
+    QString Id = QString::fromUtf8(raw, int(len));
+    quint32 Maximum_schema_number;
+    stream >> Maximum_schema_number;
+    stream.readBytes(raw, len);
+    QString Version = QString::fromUtf8(raw, int(len));
+    stream.readBytes(raw, len);
+    QString Revision = QString::fromUtf8(raw, int(len));
+    qDebug() << "Heartbeat: " << "Id =" << Id << "Maximum_schema_number =" << Maximum_schema_number << "Version =" << Version << "Revision =" << Revision;
+}
+
 
 void Udp::decode(QDataStream &stream)
 {
