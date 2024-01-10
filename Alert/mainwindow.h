@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QStringListModel>
+#include <QStandardItemModel>
 #include "../Common/udp.h"
 
 QT_BEGIN_NAMESPACE
@@ -22,7 +22,7 @@ public slots:
 private:
     Ui::MainWindow *ui;
     Udp udp;
-    QStringList list;
-    QStringListModel model;
+    QStandardItemModel model;
+    int y;
 };
 #endif // MAINWINDOW_H

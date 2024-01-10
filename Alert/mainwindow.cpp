@@ -6,7 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->listView->setModel(&model);
+    ui->tableView->setModel(&model);
+    y = 0;
     connect(&udp, SIGNAL(MessageReceived(const QString&)), this, SLOT(MessageReceived(const QString&)));
 }
 
@@ -18,9 +19,9 @@ MainWindow::~MainWindow()
 void MainWindow::MessageReceived(const QString& message)
 {
     qDebug() << message;
+    QStandardItem *item1 = new QStandardItem(message);
+    model.setItem(y++, 0, item1);
 
-    list << message;
-    model.setStringList(list);
 }
 
 
