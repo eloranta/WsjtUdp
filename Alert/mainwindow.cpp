@@ -38,6 +38,7 @@ void MainWindow::MessageReceived(const QString& message)
         model.setItem(y, 2, item);
     }
     y++;
+    ui->tableView->scrollToBottom();
 }
 
 
