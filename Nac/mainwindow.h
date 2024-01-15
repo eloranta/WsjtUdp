@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QStandardItemModel>
+#include "../Common/udp.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -14,8 +16,13 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+public slots:
+    void MessageReceived(const QString& message);
 
 private:
     Ui::MainWindow *ui;
+    Udp udp;
+    QStandardItemModel model;
+    int y;
 };
 #endif // MAINWINDOW_H
