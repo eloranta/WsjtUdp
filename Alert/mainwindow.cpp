@@ -26,9 +26,17 @@ void MainWindow::MessageReceived(const QString& message)
     if (list.length() == 1)
         return;
 
-    QStandardItem *item = new QStandardItem(list[1]);
+    QString call = list[1];
     if (list.length() >= 2 && list[1].length() == 2)
-        item = new QStandardItem(list[2]);
+        call = list[2];
+
+     if (call.front() == '<' && call.back() == '>')
+     {
+         call = call.remove(0, 1);
+         if (!call.isEmpty()) call.chop(1);
+     }
+
+    QStandardItem *item = new QStandardItem(call);
     model.setItem(y, 0, item);
 
     item = new QStandardItem(message);
