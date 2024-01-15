@@ -27,5 +27,6 @@ private:
     int y;
     QJsonArray array;
     void ReadDxccJson();
+    QString FindCountry(QString& call);
 };
 #endif // MAINWINDOW_H

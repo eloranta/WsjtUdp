@@ -64,16 +64,33 @@ void MainWindow::MessageReceived(const QString& message)
          if (!call.isEmpty()) call.chop(1);
      }
 
+    QString country = FindCountry(call);
+
     QStandardItem *item = new QStandardItem(call);
     model.setItem(y, 0, item);
 
-    item = new QStandardItem(message);
+    item = new QStandardItem(country);
     model.setItem(y, 1, item);
+
+    item = new QStandardItem(message);
+    model.setItem(y, 2, item);
 
     y++;
     ui->tableView->scrollToBottom();
 }
 
-
-
-
+QString MainWindow::FindCountry(QString& call)
+{
+    foreach (const QJsonValue & value, array)
+    {
+        QRegularExpression rx(value.toObject().value("prefixRegex").toString());
+        QRegularExpressionMatch match = rx.match(call);
+        if (match.hasMatch())
+        {
+            //dxcc = QString::number(value.toObject().value("entityCode").toInt());
+            return value.toObject().value("name").toString();
+            //continent = value.toObject().value("continent").toArray()[0].toString();
+        }
+    }
+    return "not found";
+}
