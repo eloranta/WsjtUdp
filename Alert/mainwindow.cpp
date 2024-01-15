@@ -21,22 +21,19 @@ void MainWindow::MessageReceived(const QString& message)
     qDebug() << message;
     if (message.isEmpty())
         return;
+
     const QStringList list = message.split(" ");
-    if (list.length() > 0)
-    {
-        QStandardItem *item = new QStandardItem(list[0]);
-        model.setItem(y, 0, item);
-    }
-    if (list.length() > 1)
-    {
-        QStandardItem *item = new QStandardItem(list[1]);
-        model.setItem(y, 1, item);
-    }
-    if (list.length() > 2)
-    {
-        QStandardItem *item = new QStandardItem(list[2]);
-        model.setItem(y, 2, item);
-    }
+    if (list.length() == 1)
+        return;
+
+    QStandardItem *item = new QStandardItem(list[1]);
+    if (list.length() >= 2 && list[1].length() == 2)
+        item = new QStandardItem(list[2]);
+    model.setItem(y, 0, item);
+
+    item = new QStandardItem(message);
+    model.setItem(y, 1, item);
+
     y++;
     ui->tableView->scrollToBottom();
 }
