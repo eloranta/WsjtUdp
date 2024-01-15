@@ -1,5 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QRegularExpression>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -8,12 +12,36 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->tableView->setModel(&model);
     y = 0;
+    ReadDxccJson();
     connect(&udp, SIGNAL(MessageReceived(const QString&)), this, SLOT(MessageReceived(const QString&)));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::ReadDxccJson()
+{
+    QString jsonFile = qApp->applicationDirPath() + "/dxcc.json";
+    QFile file;
+    file.setFileName(jsonFile);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    QString text = file.readAll();
+    file.close();
+    //qDebug() << text;
+
+    QJsonDocument doc = QJsonDocument::fromJson(text.toUtf8());
+    if (doc.isNull())
+    {
+        qDebug() << "Error in parsing worked.json";
+        return;
+    }
+    //qDebug() << doc;
+
+    QJsonObject object = doc.object();
+    QJsonValue value = object.value("dxcc");
+    array = value.toArray();
 }
 
 void MainWindow::MessageReceived(const QString& message)
@@ -45,5 +73,7 @@ void MainWindow::MessageReceived(const QString& message)
     y++;
     ui->tableView->scrollToBottom();
 }
+
+
 
 

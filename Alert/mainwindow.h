@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QStandardItemModel>
 #include "../Common/udp.h"
+#include <QJsonArray>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,5 +25,7 @@ private:
     Udp udp;
     QStandardItemModel model;
     int y;
+    QJsonArray array;
+    void ReadDxccJson();
 };
 #endif // MAINWINDOW_H
