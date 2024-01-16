@@ -4,6 +4,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QRegularExpression>
+#include <QSqlQuery>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -13,6 +14,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tableView->setModel(&model);
     y = 0;
     ReadDxccJson();
+
+    QSqlQuery query;
+    query.exec(QString("create table if not exists qso ("
+               "Id integer primary key autoincrement,"
+               "Call text,"
+               "Country text"));
+
     connect(&udp, SIGNAL(MessageReceived(const QString&)), this, SLOT(MessageReceived(const QString&)));
 }
 
