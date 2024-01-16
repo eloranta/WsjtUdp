@@ -11,11 +11,13 @@ CONFIG += c++11
 SOURCES += \
     ../Common/udp.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    qsomodel.cpp
 
 HEADERS += \
     ../Common/udp.h \
-    mainwindow.h
+    mainwindow.h \
+    qsomodel.h
 
 FORMS += \
     mainwindow.ui

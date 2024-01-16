@@ -5,6 +5,7 @@
 #include <QStandardItemModel>
 #include "../Common/udp.h"
 #include <QJsonArray>
+#include "qsomodel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,10 +24,9 @@ public slots:
 private:
     Ui::MainWindow *ui;
     Udp udp;
-    QStandardItemModel model;
-    int y;
     QJsonArray array;
     void ReadDxccJson();
     QString FindCountry(QString& call);
+    QsoModel model;
 };
 #endif // MAINWINDOW_H

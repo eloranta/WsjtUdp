@@ -11,15 +11,16 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    model.initialize();
     ui->tableView->setModel(&model);
-    y = 0;
+
     ReadDxccJson();
 
     QSqlQuery query;
     query.exec(QString("create table if not exists qso ("
                "Id integer primary key autoincrement,"
                "Call text,"
-               "Country text"));
+               "Country text)"));
 
     connect(&udp, SIGNAL(MessageReceived(const QString&)), this, SLOT(MessageReceived(const QString&)));
 }
@@ -74,16 +75,15 @@ void MainWindow::MessageReceived(const QString& message)
 
     QString country = FindCountry(call);
 
-    QStandardItem *item = new QStandardItem(call);
-    model.setItem(y, 0, item);
+    QString params;
+    params = "insert into qso (Call, Country) values('%1', '%2')";
+    params = params.arg(call).arg(country);
+    qDebug() << params;
 
-    item = new QStandardItem(country);
-    model.setItem(y, 1, item);
+    QSqlQuery query;
+    query.exec(params);
+    model.select();
 
-    item = new QStandardItem(message);
-    model.setItem(y, 2, item);
-
-    y++;
     ui->tableView->scrollToBottom();
 }
 
