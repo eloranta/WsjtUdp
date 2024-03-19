@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     ReadDxccJson();
 
     QSqlQuery query;
+
     query.exec(QString("create table if not exists qso ("
                "Id integer primary key autoincrement,"
                "Call text,"
