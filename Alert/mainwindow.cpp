@@ -17,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
     ReadDxccJson();
 
     QSqlQuery query;
+    query.exec("drop table qso");
+
 
     query.exec(QString("create table if not exists qso ("
                "Id integer primary key autoincrement,"
