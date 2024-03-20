@@ -27,6 +27,8 @@ MainWindow::MainWindow(QWidget *parent)
                "Message text)"));
 
     connect(&udp, SIGNAL(MessageReceived(const QString&)), this, SLOT(MessageReceived(const QString&)));
+
+    ui->tableView->hideColumn(0);
 }
 
 MainWindow::~MainWindow()
