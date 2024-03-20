@@ -27,6 +27,7 @@ private:
     QJsonArray array;
     void ReadDxccJson();
     QString FindCountry(QString& call);
+    int FindEntity(QString& call);
     QsoModel model;
 };
 #endif // MAINWINDOW_H

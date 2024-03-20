@@ -83,14 +83,23 @@ void MainWindow::MessageReceived(const QString& message)
      }
 
     QString country = FindCountry(call);
-    int entity = 666;
+    int entity = FindEntity(call);;
 
+    QSqlQuery query;
     QString params;
+    // params = "select * from dxcc where Entity = %1";
+    // params = params.arg(entity);
+    // qDebug() << params;
+    // qDebug() << query.exec(params);
+
+    // while (query.next())
+    // {
+    //     qDebug() << query.value(1).toString();
+    // }
+
     params = "insert into qso (Call, Entity, Country, Mode, Band, Message) values('%1', '%2', '%3', 'DATA', '80M', '%4')";
     params = params.arg(call).arg(entity).arg(country).arg(message);
     qDebug() << params;
-
-    QSqlQuery query;
     query.exec(params);
     model.select();
 
@@ -111,4 +120,18 @@ QString MainWindow::FindCountry(QString& call)
         }
     }
     return "not found";
+}
+
+int MainWindow::FindEntity(QString& call)
+{
+    foreach (const QJsonValue & value, array)
+    {
+        QRegularExpression rx(value.toObject().value("prefixRegex").toString());
+        QRegularExpressionMatch match = rx.match(call);
+        if (match.hasMatch())
+        {
+            return value.toObject().value("entityCode").toInt();
+        }
+    }
+    return -1;
 }
