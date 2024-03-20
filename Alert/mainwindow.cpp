@@ -23,7 +23,10 @@ MainWindow::MainWindow(QWidget *parent)
     query.exec(QString("create table if not exists qso ("
                "Id integer primary key autoincrement,"
                "Call text,"
+               "Entity integer,"
                "Country text,"
+               "Mode text,"
+               "Band text,"
                "Message text)"));
 
     connect(&udp, SIGNAL(MessageReceived(const QString&)), this, SLOT(MessageReceived(const QString&)));
@@ -80,10 +83,11 @@ void MainWindow::MessageReceived(const QString& message)
      }
 
     QString country = FindCountry(call);
+    int entity = 666;
 
     QString params;
-    params = "insert into qso (Call, Country, Message) values('%1', '%2', '%3')";
-    params = params.arg(call).arg(country).arg(message);
+    params = "insert into qso (Call, Entity, Country, Mode, Band, Message) values('%1', '%2', '%3', 'DATA', '80M', '%4')";
+    params = params.arg(call).arg(entity).arg(country).arg(message);
     qDebug() << params;
 
     QSqlQuery query;
