@@ -1,0 +1,998 @@
+{
+    "A": [
+        {
+            "re": "A[A-L]",
+            "entity": 291,
+            "country": "USA"
+        },
+        {
+            "re": "A[M–O]",
+            "entity": 281,
+            "country": "Spain"
+        },
+        {
+            "re": "A[P-S]",
+            "entity": 372,
+            "country": "Pakistan"
+        },
+        {
+            "re": "A[T–W]",
+            "entity": 324,
+            "country": "India"
+        },
+        {
+            "re": "AX",
+            "entity": 150,
+            "country": "Australia"
+        },
+        {
+            "re": "A[Y–Z]",
+            "entity": 281,
+            "country": "Argentina"
+        },
+        {
+            "re": "A2",
+            "entity": 402,
+            "country": "Botswana"
+        },
+        {
+            "re": "A3",
+            "entity": 160,
+            "country": "Tonga"
+        },
+        {
+            "re": "A4",
+            "entity": 370,
+            "country": "Oman"
+        },
+        {
+            "re": "A5",
+            "entity": 306,
+            "country": "Bhutan"
+        },
+        {
+            "re": "A6",
+            "entity": 391,
+            "country": "United Arab Emirates"
+        },
+        {
+            "re": "A7",
+            "entity": 376,
+            "country": "Qatar"
+        },
+        {
+            "re": "A8",
+            "entity": 434,
+            "country": "Liberia"
+        },
+        {
+            "re": "A9",
+            "entity": 304,
+            "country": "Bahrain"
+        }
+    ],
+    "B": [
+        {
+            "re": "B[M-Q|U-X]",
+            "entity": 386,
+            "country": "Taiwan"
+        },
+        {
+            "re": "B",
+            "entity": 318,
+            "country": "China"
+        }
+    ],
+    "C": [
+        {
+            "re": "C[A–E]",
+            "entity": 291,
+            "country": "Chile"
+        },
+        {
+            "re": "C[F–K]",
+            "entity": 281,
+            "country": "Canada"
+        },
+        {
+            "re": "C[L–M]",
+            "entity": 372,
+            "country": "Cuba"
+        },
+        {
+            "re": "CN",
+            "entity": 324,
+            "country": "Morocco"
+        },
+        {
+            "re": "CO",
+            "entity": 150,
+            "country": "Cuba"
+        },
+        {
+            "re": "CP",
+            "entity": 281,
+            "country": "Bolivia"
+        },
+        {
+            "re": "C[Q–U]",
+            "entity": 402,
+            "country": "Portugal"
+        },
+        {
+            "re": "C[V–X]",
+            "entity": 160,
+            "country": "Uruguay"
+        },
+        {
+            "re": "C[Y–Z]",
+            "entity": 370,
+            "country": "Canada"
+        },
+        {
+            "re": "C2",
+            "entity": 306,
+            "country": "Nauru"
+        },
+        {
+            "re": "C3",
+            "entity": 391,
+            "country": "Andorra"
+        },
+        {
+            "re": "c4",
+            "entity": 376,
+            "country": "Cyprus"
+        },
+        {
+            "re": "C5",
+            "entity": 434,
+            "country": "Gambia"
+        },
+        {
+            "re": "C6",
+            "entity": 304,
+            "country": "Bahamas"
+        },
+        {
+            "re": "C[8–9]",
+            "entity": 304,
+            "country": "Mozambique"
+        }
+    ],
+    "D": [
+        {
+            "re": "D[A–R]",
+            "entity": 230,
+            "country": "Germany"
+        },
+        {
+            "re": "D[S–T]",
+            "entity": 137,
+            "country": "South Korea"
+        },
+        {
+            "re": "D[U–Z]",
+            "entity": 375,
+            "country": "Philippines"
+        },
+        {
+            "re": "D[2–3]",
+            "entity": 401,
+            "country": "Angola"
+        },
+        {
+            "re": "D4",
+            "entity": 409,
+            "country": "Cape Verde"
+        },
+        {
+            "re": "D5",
+            "entity": 434,
+            "country": "Liberia"
+        },
+        {
+            "re": "D6",
+            "entity": 411,
+            "country": "Comoros"
+        },
+        {
+            "re": "D[7–9]",
+            "entity": 137,
+            "country": "South Korea"
+        }
+    ],
+    "E": [
+        {
+            "re": "E[A–H]",
+            "entity": 281,
+            "country": "Spain"
+        },
+        {
+            "re": "E[I–J]",
+            "entity": 245,
+            "country": "Ireland"
+        },
+        {
+            "re": "EK",
+            "entity": 14,
+            "country": "Armenia"
+        },
+        {
+            "re": "EL",
+            "entity": 434,
+            "country": "Liberia"
+        },
+        {
+            "re": "E[M–O]",
+            "entity": 288,
+            "country": "Ukraine"
+        },
+        {
+            "re": "E[P–Q]",
+            "entity": 330,
+            "country": "Iran"
+        },
+        {
+            "re": "ER",
+            "entity": 179,
+            "country": "Moldova"
+        },
+        {
+            "re": "ES",
+            "entity": 52,
+            "country": "Estonia"
+        },
+        {
+            "re": "ET",
+            "entity": 53,
+            "country": "Ethiopia"
+        },
+        {
+            "re": "E[U–W]",
+            "entity": 27,
+            "country": "Belarus"
+        },
+        {
+            "re": "EX",
+            "entity": 135,
+            "country": "Kyrgyzstan"
+        },
+        {
+            "re": "EY",
+            "entity": 137,
+            "country": "Tajikistan"
+        },
+        {
+            "re": "EZ",
+            "entity": 137,
+            "country": "Turkmenistan"
+        },
+        {
+            "re": "E2",
+            "entity": 387,
+            "country": "Thailand"
+        },
+        {
+            "re": "E3",
+            "entity": 51,
+            "country": "Eritrea"
+        },
+        {
+            "re": "E4",
+            "entity": 510,
+            "country": "Palestinia"
+        },
+        {
+            "re": "E5",
+            "entity": 191,
+            "country": "Cook Islands"
+        },
+        {
+            "re": "E6",
+            "entity": 188,
+            "country": "Niue"
+        },
+        {
+            "re": "E7",
+            "entity": 501,
+            "country": "Bosnia and Herzegovina"
+        }
+    ],
+    "F": [
+        {
+            "re": "F",
+            "entity": 227,
+            "country": "France..."
+        }
+    ],
+    "G": [
+        {
+            "re": "G",
+            "entity": 223,
+            "country": "Great Britain..."
+        }
+    ],
+    "H": [
+        {
+            "re": "HA",
+            "entity": 239,
+            "country": "Hungary"
+        },
+        {
+            "re": "HB0|3Y",
+            "entity": 251,
+            "country": "Liechtenstein"
+        },
+        {
+            "re": "HB",
+            "entity": 287,
+            "country": "Switzerland"
+        },
+        {
+            "re": "HF",
+            "entity": 269,
+            "country": "Poland"
+        },
+        {
+            "re": "HG",
+            "entity": 239,
+            "country": "Hungary"
+        },
+        {
+            "re": "HH",
+            "entity": 78,
+            "country": "Haiti"
+        },
+        {
+            "re": "HI",
+            "entity": 72,
+            "country": "Dominican Republic"
+        },
+        {
+            "re": "H[J–K]",
+            "entity": 116,
+            "country": "Colombia"
+        },
+        {
+            "re": "HL",
+            "entity": 137,
+            "country": "South Korea"
+        },
+        {
+            "re": "HM",
+            "entity": 344,
+            "country": "North Korea"
+        },
+        {
+            "re": "HN",
+            "entity": 333,
+            "country": "Iraq"
+        },
+        {
+            "re": "H[O–P]",
+            "entity": 88,
+            "country": "Panama"
+        },
+        {
+            "re": "H[Q–R]",
+            "entity": 80,
+            "country": "Honduras"
+        },
+        {
+            "re": "HS",
+            "entity": 387,
+            "country": "Thailand"
+        },
+        {
+            "re": "HT",
+            "entity": 86,
+            "country": "Nicaragua"
+        },
+        {
+            "re": "HU",
+            "entity": 74,
+            "country": "El Salvador"
+        },
+        {
+            "re": "HV",
+            "entity": 295,
+            "country": "Vatican City"
+        },
+        {
+            "re": "H[W–Y]",
+            "entity": 227,
+            "country": "France..."
+        },
+        {
+            "re": "HZ",
+            "entity": 378,
+            "country": "Saudi Arabia"
+        },
+        {
+            "re": "H2",
+            "entity": 215,
+            "country": "Cyprus"
+        },
+        {
+            "re": "H3",
+            "entity": 88,
+            "country": "Panama"
+        },
+        {
+            "re": "H4",
+            "entity": 185,
+            "country": "Solomon Islands"
+        },
+        {
+            "re": "H[6–7]",
+            "entity": 86,
+            "country": "Nicaragua"
+        },
+        {
+            "re": "H[8–9]",
+            "entity": 88,
+            "country": "Panama"
+        }
+    ],
+    "I": [
+        {
+            "re": "I",
+            "entity": 291,
+            "country": "Italy"
+        }
+    ],
+    "J": [
+        {
+            "re": "J[A–S]",
+            "entity": 239,
+            "country": "Japan"
+        },
+        {
+            "re": "J[T–V]",
+            "entity": 363,
+            "country": "Mongolia"
+        },
+        {
+            "re": "J[W–X]",
+            "entity": 266,
+            "country": "Norway"
+        },
+        {
+            "re": "JY",
+            "entity": 342,
+            "country": "Jordan"
+        },
+        {
+            "re": "JZ",
+            "entity": 239,
+            "country": "Indonesia"
+        },
+        {
+            "re": "J2",
+            "entity": 382,
+            "country": "Djibouti"
+        },
+        {
+            "re": "J3",
+            "entity": 77,
+            "country": "Grenada"
+        },
+        {
+            "re": "J4",
+            "entity": 236,
+            "country": "Greece"
+        },
+        {
+            "re": "J5",
+            "entity": 109,
+            "country": "Guinea-Bissau"
+        },
+        {
+            "re": "J6",
+            "entity": 97,
+            "country": "Saint Lucia"
+        },
+        {
+            "re": "J7",
+            "entity": 95,
+            "country": "Dominica"
+        },
+        {
+            "re": "J8",
+            "entity": 98,
+            "country": "Saint Vincent and the Grenadines"
+        }
+    ],
+    "K": [
+        {
+            "re": "K",
+            "entity": 291,
+            "country": "USA"
+        }
+    ],
+    "L": [
+        {
+            "re": "L[A–N]",
+            "entity": 266,
+            "country": "Norway"
+        },
+        {
+            "re": "J[T–V]",
+            "entity": 363,
+            "country": "Mongolia"
+        },
+        {
+            "re": "L[O–W]",
+            "entity": 100,
+            "country": "Argentina"
+        },
+        {
+            "re": "LX",
+            "entity": 254,
+            "country": "Luxembourg"
+        },
+        {
+            "re": "LY",
+            "entity": 146,
+            "country": "Lithuania"
+        },
+        {
+            "re": "LZ",
+            "entity": 212,
+            "country": "Bulgaria"
+        },
+        {
+            "re": "L[2–9]",
+            "entity": 100,
+            "country": "Argentina"
+        }
+    ],
+    "M": [
+        {
+            "re": "M",
+            "entity": 223,
+            "country": "United Kingdom"
+        }
+    ],
+    "N": [
+        {
+            "re": "N",
+            "entity": 291,
+            "country": "USA"
+        }
+    ],
+    "O": [
+        {
+            "re": "O[A–C]",
+            "entity": 266,
+            "country": "Peru"
+        },
+        {
+            "re": "OD",
+            "entity": 363,
+            "country": "Lebanon"
+        },
+        {
+            "re": "OE",
+            "entity": 100,
+            "country": "Austria"
+        },
+        {
+            "re": "O[F–J]",
+            "entity": 254,
+            "country": "Finland"
+        },
+        {
+            "re": "O[K–L]",
+            "entity": 146,
+            "country": "Czech Republic"
+        },
+        {
+            "re": "OM",
+            "entity": 212,
+            "country": "Slovakia"
+        },
+        {
+            "re": "O[N–T]",
+            "entity": 100,
+            "country": "Belgium"
+        },
+        {
+            "re": "O[N–T]",
+            "entity": 100,
+            "country": "Belgium"
+        },
+        {
+            "re": "O[N–T]",
+            "entity": 100,
+            "country": "Belgium"
+        }
+    ],
+    "P": [
+        {
+            "re": "P[A–I]",
+            "entity": 263,
+            "country": "Netherlands"
+        },
+        {
+            "re": "P[K–O]",
+            "entity": 327,
+            "country": "Indonesia"
+        },
+        {
+            "re": "P[P–Y]",
+            "entity": 108,
+            "country": "Brazil"
+        },
+        {
+            "re": "PZ",
+            "entity": 140,
+            "country": "Suriname"
+        },
+        {
+            "re": "P2",
+            "entity": 163,
+            "country": "Papua New Guinea"
+        },
+        {
+            "re": "P3",
+            "entity": 215,
+            "country": "Cyprus"
+        },
+        {
+            "re": "P4",
+            "entity": 91,
+            "country": "Aruba"
+        },
+        {
+            "re": "P[5–9]",
+            "entity": 344,
+            "country": "North Korea"
+        }
+    ],
+    "R": [
+        {
+            "re": "R",
+            "entity": 54,
+            "country": "Russia"
+        }
+    ],
+    "S": [
+        {
+            "re": "S[A–M]",
+            "entity": 284,
+            "country": "Sweden"
+        },
+        {
+            "re": "S[N–R]",
+            "entity": 269,
+            "country": "Poland"
+        },
+        {
+            "re": "SU",
+            "entity": 478,
+            "country": "Egypt"
+        },
+        {
+            "re": "S[V–Z]",
+            "entity": 236,
+            "country": "Greece"
+        },
+        {
+            "re": "S[2–3]",
+            "entity": 305,
+            "country": "Bangladesh"
+        },
+        {
+            "re": "S5",
+            "entity": 499,
+            "country": "Slovenia"
+        },
+        {
+            "re": "S6",
+            "entity": 381,
+            "country": "Singapore"
+        },
+        {
+            "re": "S8",
+            "entity": 462,
+            "country": "South Africa"
+        },
+        {
+            "re": "S9",
+            "entity": 219,
+            "country": "São Tomé and Príncipe"
+        }
+    ],
+    "T": [
+        {
+            "re": "T[A–C]",
+            "entity": 390,
+            "country": "Turkey"
+        },
+        {
+            "re": "TD",
+            "entity": 76,
+            "country": "Guatemala"
+        },
+        {
+            "re": "TE",
+            "entity": 308,
+            "country": "Costa Rica"
+        },
+        {
+            "re": "TF",
+            "entity": 242,
+            "country": "Iceland"
+        },
+        {
+            "re": "TG",
+            "entity": 76,
+            "country": "Guatemala"
+        },
+        {
+            "re": "TH",
+            "entity": 227,
+            "country": "France"
+        },
+        {
+            "re": "TL",
+            "entity": 408,
+            "country": "Central African Republic"
+        },
+        {
+            "re": "TM",
+            "entity": 227,
+            "country": "France"
+        },
+        {
+            "re": "TN",
+            "entity": 412,
+            "country": "Republic of the Congo"
+        },
+        {
+            "re": "T[O–Q]",
+            "entity": 227,
+            "country": "France"
+        },
+        {
+            "re": "TR",
+            "entity": 420,
+            "country": "Gabon"
+        },
+        {
+            "re": "TS",
+            "entity": 474,
+            "country": "Tunisia"
+        },
+        {
+            "re": "TT",
+            "entity": 410,
+            "country": "Chad"
+        },
+        {
+            "re": "TU",
+            "entity": 428,
+            "country": "Ivory Coast"
+        },
+        {
+            "re": "T[V–X]",
+            "entity": 219,
+            "country": "France"
+        },
+        {
+            "re": "TY",
+            "entity": 416,
+            "country": "Benin"
+        },
+        {
+            "re": "TZ",
+            "entity": 442,
+            "country": "Mali"
+        },
+        {
+            "re": "T2",
+            "entity": 282,
+            "country": "Tuvalu"
+        },
+        {
+            "re": "T3",
+            "entity": 31,
+            "country": "Kiribati"
+        },
+        {
+            "re": "T4",
+            "entity": 70,
+            "country": "Cuba"
+        },
+        {
+            "re": "T5",
+            "entity": 232,
+            "country": "Somalia"
+        },
+        {
+            "re": "T6",
+            "entity": 3,
+            "country": "Afghanistan"
+        },
+        {
+            "re": "T7",
+            "entity": 278,
+            "country": "San Marino"
+        },
+        {
+            "re": "T8",
+            "entity": 22,
+            "country": "Palau"
+        }
+    ],
+    "U": [
+        {
+            "re": "U[A–I]",
+            "entity": 54,
+            "country": "Russia"
+        },
+        {
+            "re": "U[J–M]",
+            "entity": 292,
+            "country": "Uzbekistan"
+        },
+        {
+            "re": "U[N–Q]",
+            "entity": 130,
+            "country": "Kazakhstan"
+        },
+        {
+            "re": "U[R–Z]",
+            "entity": 242,
+            "country": "Iceland"
+        },
+        {
+            "re": "TG",
+            "entity": 288,
+            "country": "Ukraine"
+        }
+    ],
+    "V": [
+        {
+            "re": "V[A–G|H–N]",
+            "entity": 150,
+            "country": "Australia"
+        },
+        {
+            "re": "VO",
+            "entity": 1,
+            "country": "Canada"
+        },
+        {
+            "re": "V[P–Q]",
+            "entity": 223,
+            "country": "United Kingdom"
+        },
+        {
+            "re": "VR",
+            "entity": 321,
+            "country": "Hong Kong"
+        },
+        {
+            "re": "VS",
+            "entity": 223,
+            "country": "United Kingdom"
+        },
+        {
+            "re": "V[T–W]",
+            "entity": 324,
+            "country": "India"
+        },
+        {
+            "re": "V[X–Y]",
+            "entity": 1,
+            "country": "Canada"
+        },
+        {
+            "re": "VZ",
+            "entity": 150,
+            "country": "Australia"
+        },
+        {
+            "re": "V2",
+            "entity": 94,
+            "country": "Antigua and Barbuda"
+        },
+        {
+            "re": "V3",
+            "entity": 66,
+            "country": "Belize"
+        },
+        {
+            "re": "V4",
+            "entity": 249,
+            "country": "Saint Kitts and Nevis"
+        },
+        {
+            "re": "V5",
+            "entity": 464,
+            "country": "Namibia"
+        },
+        {
+            "re": "V6",
+            "entity": 173,
+            "country": "Federated States of Micronesia"
+        },
+        {
+            "re": "V7",
+            "entity": 168,
+            "country": "Marshall Islands"
+        },
+        {
+            "re": "V8",
+            "entity": 345,
+            "country": "Brunei"
+        }
+    ],
+    "W": [
+        {
+            "re": "N",
+            "entity": 291,
+            "country": "USA"
+        }
+    ],
+    "X": [
+        {
+            "re": "X[A–I]",
+            "entity": 50,
+            "country": "Mexico"
+        },
+        {
+            "re": "X[J–O]",
+            "entity": 1,
+            "country": "Canada"
+        },
+        {
+            "re": "XP",
+            "entity": 221,
+            "country": "Denmark"
+        },
+        {
+            "re": "X[Q–R]",
+            "entity": 112,
+            "country": "Chile"
+        },
+        {
+            "re": "XS",
+            "entity": 318,
+            "country": "China"
+        },
+        {
+            "re": "XT",
+            "entity": 480,
+            "country": "Burkina Faso"
+        },
+        {
+            "re": "XU]",
+            "entity": 312,
+            "country": "Cambodia"
+        },
+        {
+            "re": "XV",
+            "entity": 293,
+            "country": "Vietnam"
+        },
+        {
+            "re": "XW",
+            "entity": 143,
+            "country": "Laos"
+        },
+        {
+            "re": "XX",
+            "entity": 152,
+            "country": "Macao"
+        },
+        {
+            "re": "X[Y–Z]",
+            "entity": 249,
+            "country": "Burma"
+        }
+    ]
+}

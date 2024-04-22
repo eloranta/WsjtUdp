@@ -81,6 +81,8 @@ void MainWindow::MessageReceived(const QString& message)
          call = call.remove(0, 1);
          if (!call.isEmpty()) call.chop(1);
      }
+     if (call == "RR73;")
+         return;
 
     QString country = FindCountry(call);
     int entity = FindEntity(call);;
