@@ -89,15 +89,15 @@ void MainWindow::MessageReceived(const QString& message)
 
     QSqlQuery query;
     QString params;
-    params = "select * from dxcc where Dxcc = %1";
-    params = params.arg(entity);
-    qDebug() << params;
-    qDebug() << query.exec(params);
+    // params = "select * from dxcc where Dxcc = %1";
+    // params = params.arg(entity);
+    // qDebug() << params;
+    // qDebug() << query.exec(params);
 
-    while (query.next())
-    {
-        qDebug() << query.value(14);
-    }
+    // while (query.next())
+    // {
+    //     qDebug() << query.value(14);
+    // }
 
     params = "insert into qso (Call, Entity, Country, Mode, Band, Message) values('%1', '%2', '%3', 'DATA', '80M', '%4')";
     params = params.arg(call).arg(entity).arg(country).arg(message);
