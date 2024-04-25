@@ -14,8 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     model.initialize();
     ui->tableView->setModel(&model);
 
-    ReadDxccJson();
-    ReadDxccJson2();
+     ReadDxccJson2();
 
     QSqlQuery query;
     query.exec("drop table qso");
@@ -40,29 +39,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::ReadDxccJson()
-{
-    QString jsonFile = qApp->applicationDirPath() + "/dxcc.json";
-    QFile file;
-    file.setFileName(jsonFile);
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
-    QString text = file.readAll();
-    file.close();
-    //qDebug() << text;
-
-    QJsonDocument doc = QJsonDocument::fromJson(text.toUtf8());
-    if (doc.isNull())
-    {
-        qDebug() << "Error in parsing worked.json";
-        return;
-    }
-    //qDebug() << doc;
-
-    QJsonObject object = doc.object();
-    QJsonValue value = object.value("dxcc");
-    array = value.toArray();
-}
-
 void MainWindow::ReadDxccJson2()
 {
     QString jsonFile = qApp->applicationDirPath() + "/prefix.json";
@@ -82,9 +58,6 @@ void MainWindow::ReadDxccJson2()
 
     object = doc.object();
     //qDebug() << doc;
-
-    // QJsonValue value = object.value("dxcc");
-    // array = value.toArray();
 }
 
 void MainWindow::MessageReceived(const QString& message)

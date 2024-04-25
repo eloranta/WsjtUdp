@@ -25,7 +25,6 @@ private:
     Ui::MainWindow *ui;
     Udp udp;
     QJsonArray array;
-    void ReadDxccJson();
     void ReadDxccJson2();
     QString FindCountry(QString& call);
     int FindEntity(QString& call);
