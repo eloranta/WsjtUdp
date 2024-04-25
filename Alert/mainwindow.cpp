@@ -109,7 +109,7 @@ void MainWindow::MessageReceived(const QString& message)
      if (call == "RR73;")
          return;
 
-    QString country2 = FindCountry(call);
+     QString country2 = "Digi";
     QString country = FindCountry2(call);
     int entity = FindEntity(call);;
 
@@ -127,8 +127,10 @@ void MainWindow::MessageReceived(const QString& message)
     //     qDebug() << query.value(14);
     // }
 
+    const QString mode = "Digi";
+
     params = "insert into qso (Call, Entity, Country, Mode, Band, Message) values('%1', '%2', '%3', '%4', '80M', '%5')";
-    params = params.arg(call).arg(entity).arg(country).arg(country2).arg(message);
+    params = params.arg(call).arg(entity).arg(country).arg(mode).arg(message);
     //qDebug() << params;
     query.exec(params);
     model.select();
