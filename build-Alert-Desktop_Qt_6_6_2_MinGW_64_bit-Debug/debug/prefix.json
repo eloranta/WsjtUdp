@@ -551,7 +551,7 @@
             "country": "Bolivia"
         },
         {
-            "re": "^C[Q–U]",
+            "re": "^C[Q-U]",
             "entity": 402,
             "country": "Portugal"
         },
@@ -964,12 +964,7 @@
             "country": "Norway"
         },
         {
-            "re": "^J[T–V]",
-            "entity": 363,
-            "country": "Mongolia"
-        },
-        {
-            "re": "^L[O–W]",
+            "re": "^L[O-W]",
             "entity": 100,
             "country": "Argentina"
         },
@@ -1101,7 +1096,7 @@
     ],
     "S": [
         {
-            "re": "^S[A–M]",
+            "re": "^S[A-M]",
             "entity": 284,
             "country": "Sweden"
         },
@@ -1292,14 +1287,14 @@
     ],
     "V": [
         {
-            "re": "^V[A–G|H–N]",
-            "entity": 150,
-            "country": "Australia"
-        },
-        {
-            "re": "^VO",
+            "re": "^V[A–G,O]",
             "entity": 1,
             "country": "Canada"
+        },
+        {
+            "re": "^V[H-N]",
+            "entity": 1,
+            "country": "Australia"
         },
         {
             "re": "^V[P–Q]",
