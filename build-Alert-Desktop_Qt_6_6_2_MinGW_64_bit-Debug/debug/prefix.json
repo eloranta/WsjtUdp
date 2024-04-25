@@ -1052,12 +1052,12 @@
             "country": "Netherlands"
         },
         {
-            "re": "^P[K–O]",
+            "re": "^P[K-O]",
             "entity": 327,
             "country": "Indonesia"
         },
         {
-            "re": "^P[P–Y]",
+            "re": "^P[P-Y]",
             "entity": 108,
             "country": "Brazil"
         },
@@ -1089,9 +1089,34 @@
     ],
     "R": [
         {
-            "re": "^R",
+            "re": "R2[F,K]",
+            "entity": 126,
+            "country": "Kaliningrad"
+        },
+        {
+            "re": "R[A-I][F,K]",
+            "entity": 126,
+            "country": "Kaliningrad"
+        },
+        {
+            "re": "^R[1-7]",
             "entity": 54,
-            "country": "Russia"
+            "country": "European Russia"
+        },
+        {
+            "re": "^R[A-Z][1-7]",
+            "entity": 54,
+            "country": "European Russia"
+        },
+        {
+            "re": "^R[8,9,0]",
+            "entity": 54,
+            "country": "Asian Russia"
+        },
+        {
+            "re": "^R[A-Z]8,9,0]",
+            "entity": 54,
+            "country": "Asian Russia"
         }
     ],
     "S": [
@@ -1265,9 +1290,39 @@
     ],
     "U": [
         {
-            "re": "^U[A–I]",
+            "re": "^UA2CZ]",
+            "entity": 126,
+            "country": "Kaliningrad"
+        },
+        {
+            "re": "^U2[F,K]",
+            "entity": 126,
+            "country": "Kaliningrad"
+        },
+        {
+            "re": "^U[A-I][F,K]",
+            "entity": 126,
+            "country": "Kaliningrad"
+        },
+        {
+            "re": "^U[1-7]",
             "entity": 54,
-            "country": "Russia"
+            "country": "European Russia"
+        },
+        {
+            "re": "^U[A-I][1-7]",
+            "entity": 54,
+            "country": "European Russia"
+        },
+        {
+            "re": "^U[8,9,0]",
+            "entity": 54,
+            "country": "Asian Russia"
+        },
+        {
+            "re": "^U[A-I]8,9,0]",
+            "entity": 54,
+            "country": "Asian Russia"
         },
         {
             "re": "^U[J–M]",
