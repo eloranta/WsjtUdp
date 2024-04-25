@@ -109,8 +109,8 @@ void MainWindow::MessageReceived(const QString& message)
      if (call == "RR73;")
          return;
 
-    QString country = FindCountry(call);
-    QString country2 = FindCountry2(call);
+    QString country2 = FindCountry(call);
+    QString country = FindCountry2(call);
     int entity = FindEntity(call);;
 
     //qDebug() << country << country2;
