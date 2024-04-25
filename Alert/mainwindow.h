@@ -19,8 +19,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 public slots:
-    void MessageReceived(const QString& message);
-
+    void MessageReceived(QString message);
+    void FreqChange(int freq);
 private:
     Ui::MainWindow *ui;
     Udp udp;
@@ -30,5 +30,6 @@ private:
     int FindEntity(QString& call);
     QsoModel model;
     QJsonObject object;
+    QString band;
  };
 #endif // MAINWINDOW_H

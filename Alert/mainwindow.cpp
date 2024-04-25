@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     model.initialize();
     ui->tableView->setModel(&model);
 
-     ReadDxccJson2();
+    ReadDxccJson2();
 
     QSqlQuery query;
     query.exec("drop table qso");
@@ -29,9 +29,12 @@ MainWindow::MainWindow(QWidget *parent)
                "Band text,"
                "Message text)"));
 
-    connect(&udp, SIGNAL(MessageReceived(const QString&)), this, SLOT(MessageReceived(const QString&)));
+    connect(&udp, SIGNAL(MessageReceived(QString)), this, SLOT(MessageReceived(QString)));
+    connect(&udp, SIGNAL(FreqChange(int)), this, SLOT(FreqChange(int)));
 
     ui->tableView->hideColumn(0);
+
+    band = "7";
 }
 
 MainWindow::~MainWindow()
@@ -60,7 +63,7 @@ void MainWindow::ReadDxccJson2()
     //qDebug() << doc;
 }
 
-void MainWindow::MessageReceived(const QString& message)
+void MainWindow::MessageReceived(QString message)
 {
     //qDebug() << message;
     if (message.isEmpty())
@@ -99,8 +102,8 @@ void MainWindow::MessageReceived(const QString& message)
 
     const QString mode = "Digi";
 
-    params = "insert into qso (Call, Entity, Country, Mode, Band, Message) values('%1', '%2', '%3', '%4', '80M', '%5')";
-    params = params.arg(call).arg(entity).arg(country).arg(mode).arg(message);
+    params = "insert into qso (Call, Entity, Country, Mode, Band, Message) values('%1', '%2', '%3', '%4', '%5', '%6')";
+    params = params.arg(call).arg(entity).arg(country).arg(mode).arg(band).arg(message);
     //qDebug() << params;
     query.exec(params);
     model.select();
@@ -145,3 +148,9 @@ int MainWindow::FindEntity(QString& call)
     }
     return -1;
 }
+
+void MainWindow::FreqChange(int freq)
+{
+    band = QString::number(freq/1000000);
+}
+

@@ -41,7 +41,8 @@ private:
 public:
     explicit Udp(QObject *parent = nullptr);
 signals:
-    void MessageReceived(const QString& message);
+    void MessageReceived(QString message);
+    void FreqChange(int freq);
 public slots:
     void readyRead();
 };
