@@ -28,7 +28,6 @@ private:
     void ReadDxccJson();
     void ReadDxccJson2();
     QString FindCountry(QString& call);
-    QString FindCountry2(QString& call);
     int FindEntity(QString& call);
     QsoModel model;
     QJsonObject object;

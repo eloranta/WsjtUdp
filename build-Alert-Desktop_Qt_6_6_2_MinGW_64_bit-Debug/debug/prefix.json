@@ -522,7 +522,7 @@
     "C": [
         {
             "re": "^C[A–E]",
-            "entity": 291,
+            "entity": 112,
             "country": "Chile"
         },
         {
@@ -879,7 +879,7 @@
         },
         {
             "re": "^I",
-            "entity": 291,
+            "entity": 248,
             "country": "Italy"
         }
     ],
@@ -1431,12 +1431,12 @@
     ],
     "X": [
         {
-            "re": "^X[A–I]",
+            "re": "^X[A-I]",
             "entity": 50,
             "country": "Mexico"
         },
         {
-            "re": "^X[J–O]",
+            "re": "^X[J-O]",
             "entity": 1,
             "country": "Canada"
         },

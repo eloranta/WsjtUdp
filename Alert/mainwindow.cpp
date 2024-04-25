@@ -109,11 +109,8 @@ void MainWindow::MessageReceived(const QString& message)
      if (call == "RR73;")
          return;
 
-     QString country2 = "Digi";
-    QString country = FindCountry2(call);
-    int entity = FindEntity(call);;
-
-    //qDebug() << country << country2;
+    QString country = FindCountry(call);
+    int entity = FindEntity(call);
 
     QSqlQuery query;
     QString params;
@@ -140,22 +137,6 @@ void MainWindow::MessageReceived(const QString& message)
 
 QString MainWindow::FindCountry(QString& call)
 {
-    foreach (const QJsonValue & value, array)
-    {
-        QRegularExpression rx(value.toObject().value("prefixRegex").toString());
-        QRegularExpressionMatch match = rx.match(call);
-        if (match.hasMatch())
-        {
-            //dxcc = QString::number(value.toObject().value("entityCode").toInt());
-            return value.toObject().value("name").toString();
-            //continent = value.toObject().value("continent").toArray()[0].toString();
-        }
-    }
-    return "not found";
-}
-
-QString MainWindow::FindCountry2(QString& call)
-{
     QJsonValue item = object.value(call[0]);
     QJsonArray array = item.toArray();
     static QRegularExpression rx;
@@ -175,13 +156,18 @@ QString MainWindow::FindCountry2(QString& call)
 
 int MainWindow::FindEntity(QString& call)
 {
+    QJsonValue item = object.value(call[0]);
+    QJsonArray array = item.toArray();
+    static QRegularExpression rx;
+    static QRegularExpressionMatch match;
     foreach (const QJsonValue & value, array)
     {
-        QRegularExpression rx(value.toObject().value("prefixRegex").toString());
-        QRegularExpressionMatch match = rx.match(call);
+        QString e = value.toObject().value("re").toString();
+        rx.setPattern(e);
+        match = rx.match(call);
         if (match.hasMatch())
         {
-            return value.toObject().value("entityCode").toInt();
+            return value.toObject().value("entity").toInt();
         }
     }
     return -1;
