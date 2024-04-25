@@ -161,12 +161,10 @@ QString MainWindow::FindCountry2(QString& call)
     foreach (const QJsonValue & value, array)
     {
         QString e = value.toObject().value("re").toString();
-        qDebug() << e << call;
         rx.setPattern(e);
         match = rx.match(call);
         if (match.hasMatch())
         {
-            qDebug() << e << call;
             return value.toObject().value("country").toString();
         }
     }

@@ -576,7 +576,7 @@
             "country": "Andorra"
         },
         {
-            "re": "^c4",
+            "re": "^C4",
             "entity": 376,
             "country": "Cyprus"
         },
@@ -660,7 +660,7 @@
             "country": "Liberia"
         },
         {
-            "re": "^E[M–O]",
+            "re": "^E[M-O]",
             "entity": 288,
             "country": "Ukraine"
         },
@@ -873,6 +873,11 @@
     ],
     "I": [
         {
+            "re": "^I[S,M]0",
+            "entity": 225,
+            "country": "Sardinia"
+        },
+        {
             "re": "^I",
             "entity": 291,
             "country": "Italy"
@@ -1020,7 +1025,7 @@
             "country": "Austria"
         },
         {
-            "re": "^O[F–J]",
+            "re": "^O[F-J]",
             "entity": 254,
             "country": "Finland"
         },
@@ -1047,7 +1052,7 @@
     ],
     "P": [
         {
-            "re": "^P[A–I]",
+            "re": "^P[A-I]",
             "entity": 263,
             "country": "Netherlands"
         },
@@ -1101,7 +1106,7 @@
             "country": "Sweden"
         },
         {
-            "re": "^S[N–R]",
+            "re": "^S[N-R]",
             "entity": 269,
             "country": "Poland"
         },
@@ -1282,11 +1287,6 @@
         {
             "re": "^U[R–Z]",
             "entity": 242,
-            "country": "Iceland"
-        },
-        {
-            "re": "^TG",
-            "entity": 288,
             "country": "Ukraine"
         }
     ],
@@ -1434,6 +1434,125 @@
             "re": "^X[Y–Z]",
             "entity": 249,
             "country": "Burma"
+        }
+    ],
+    "Y": [
+        {
+            "re": "^Y[2–9]",
+            "entity": 238,
+            "country": "Germany"
+        },
+        {
+            "re": "^YA",
+            "entity": 3,
+            "country": "Afganistan"
+        },
+        {
+            "re": "^Y[B-H]",
+            "entity": 327,
+            "country": "Indonesia"
+        },
+        {
+            "re": "^YI",
+            "entity": 333,
+            "country": "Iraq"
+        },
+        {
+            "re": "^YJ",
+            "entity": 158,
+            "country": "Vanuatu"
+        },
+        {
+            "re": "^YL",
+            "entity": 145,
+            "country": "Latvia"
+        },
+        {
+            "re": "^YM",
+            "entity": 390,
+            "country": "Turkey"
+        },
+        {
+            "re": "^YN",
+            "entity": 86,
+            "country": "Nicaragua"
+        },
+        {
+            "re": "^Y[O-R]",
+            "entity": 275,
+            "country": "Romania"
+        },
+        {
+            "re": "^YS",
+            "entity": 74,
+            "country": "El Salvador"
+        },
+        {
+            "re": "^YT",
+            "entity": 296,
+            "country": "Serbia"
+        },
+        {
+            "re": "^Y[V-Y]",
+            "entity": 148,
+            "country": "Venezuela"
+        }
+    ],
+    "Z": [
+        {
+            "re": "^Z2",
+            "entity": 452,
+            "country": "Zimbabwe"
+        },
+        {
+            "re": "^Z3",
+            "entity": 502,
+            "country": "North Macedonia"
+        },
+        {
+            "re": "^Z8",
+            "entity": 521,
+            "country": "South Sudan"
+        },
+        {
+            "re": "^ZA",
+            "entity": 7,
+            "country": "Albania"
+        },
+        {
+            "re": "^Z[B-J]",
+            "entity": 223,
+            "country": "United Kingdom"
+        },
+        {
+            "re": "^Z[K-M]",
+            "entity": 170,
+            "country": "New Zealand"
+        },
+        {
+            "re": "^Z[N-O]]",
+            "entity": 223,
+            "country": "United Kingdom"
+        },
+        {
+            "re": "^ZP",
+            "entity": 132,
+            "country": "Paraguay"
+        },
+        {
+            "re": "^ZQ",
+            "entity": 223,
+            "country": "United Kingdom"
+        },
+        {
+            "re": "^Z[R-U]",
+            "entity": 462,
+            "country": "South Africa"
+        },
+        {
+            "re": "Z[V-Z]",
+            "entity": 108,
+            "country": "Brazil"
         }
     ]
 }
