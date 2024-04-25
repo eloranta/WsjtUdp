@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tableView->setModel(&model);
 
     ReadDxccJson();
+    ReadDxccJson2();
 
     QSqlQuery query;
     query.exec("drop table qso");
@@ -62,9 +63,33 @@ void MainWindow::ReadDxccJson()
     array = value.toArray();
 }
 
+void MainWindow::ReadDxccJson2()
+{
+    QString jsonFile = qApp->applicationDirPath() + "/prefix.json";
+    QFile file;
+    file.setFileName(jsonFile);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    QString text = file.readAll();
+    file.close();
+    //qDebug() << text;
+
+    QJsonDocument doc = QJsonDocument::fromJson(text.toUtf8());
+    if (doc.isNull())
+    {
+        qDebug() << "Error in parsing prefix.json";
+        return;
+    }
+
+    object = doc.object();
+    //qDebug() << doc;
+
+    // QJsonValue value = object.value("dxcc");
+    // array = value.toArray();
+}
+
 void MainWindow::MessageReceived(const QString& message)
 {
-    qDebug() << message;
+    //qDebug() << message;
     if (message.isEmpty())
         return;
 
@@ -85,7 +110,10 @@ void MainWindow::MessageReceived(const QString& message)
          return;
 
     QString country = FindCountry(call);
+    QString country2 = FindCountry2(call);
     int entity = FindEntity(call);;
+
+    //qDebug() << country << country2;
 
     QSqlQuery query;
     QString params;
@@ -99,9 +127,9 @@ void MainWindow::MessageReceived(const QString& message)
     //     qDebug() << query.value(14);
     // }
 
-    params = "insert into qso (Call, Entity, Country, Mode, Band, Message) values('%1', '%2', '%3', 'DATA', '80M', '%4')";
-    params = params.arg(call).arg(entity).arg(country).arg(message);
-    qDebug() << params;
+    params = "insert into qso (Call, Entity, Country, Mode, Band, Message) values('%1', '%2', '%3', '%4', '80M', '%5')";
+    params = params.arg(call).arg(entity).arg(country).arg(country2).arg(message);
+    //qDebug() << params;
     query.exec(params);
     model.select();
 
@@ -119,6 +147,27 @@ QString MainWindow::FindCountry(QString& call)
             //dxcc = QString::number(value.toObject().value("entityCode").toInt());
             return value.toObject().value("name").toString();
             //continent = value.toObject().value("continent").toArray()[0].toString();
+        }
+    }
+    return "not found";
+}
+
+QString MainWindow::FindCountry2(QString& call)
+{
+    QJsonValue item = object.value(call[0]);
+    QJsonArray array = item.toArray();
+    static QRegularExpression rx;
+    static QRegularExpressionMatch match;
+    foreach (const QJsonValue & value, array)
+    {
+        QString e = value.toObject().value("re").toString();
+        qDebug() << e << call;
+        rx.setPattern(e);
+        match = rx.match(call);
+        if (match.hasMatch())
+        {
+            qDebug() << e << call;
+            return value.toObject().value("country").toString();
         }
     }
     return "not found";
