@@ -1287,7 +1287,7 @@
     ],
     "V": [
         {
-            "re": "^V[A–G,O]",
+            "re": "^V[A-G,O]",
             "entity": 1,
             "country": "Canada"
         },
