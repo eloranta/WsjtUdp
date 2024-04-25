@@ -164,15 +164,15 @@ void Udp::status(QDataStream &stream)
     quint32 TRPeriod;
     stream >> SpecialOperationMode >> FrequencyTolerance >> TRPeriod;
     // qDebug() << "        " << "SpecialOperationMode =" << SpecialOperationMode;
-    if (FrequencyTolerance == 0xffffffff)
-        qDebug() << "        " << "FrequencyTolerance = 0xffffffff";
-    else
-        qDebug() << "        " << "FrequencyTolerance =" << FrequencyTolerance;
+    // if (FrequencyTolerance == 0xffffffff)
+    //     qDebug() << "        " << "FrequencyTolerance = 0xffffffff";
+    // else
+    //     qDebug() << "        " << "FrequencyTolerance =" << FrequencyTolerance;
 
-    if (TRPeriod == 0xffffffff)
-        qDebug() << "        " << "TRPeriod = 0xffffffff";
-    else
-        qDebug() << "        " << "TRPeriod =" << TRPeriod;
+    // if (TRPeriod == 0xffffffff)
+    //     qDebug() << "        " << "TRPeriod = 0xffffffff";
+    // else
+    //     qDebug() << "        " << "TRPeriod =" << TRPeriod;
 
     stream.readBytes(raw, len);
     QString ConfigurationName = QString::fromUtf8(raw, static_cast<int>(len));
