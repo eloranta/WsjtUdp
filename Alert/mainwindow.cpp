@@ -114,39 +114,39 @@ void MainWindow::MessageReceived(QString message)
 
 QString MainWindow::FindCountry(QString& call)
 {
-    QJsonValue item = object.value(call[0]);
-    QJsonArray array = item.toArray();
-    static QRegularExpression rx;
-    static QRegularExpressionMatch match;
-    foreach (const QJsonValue & value, array)
-    {
-        QString e = value.toObject().value("re").toString();
-        rx.setPattern(e);
-        match = rx.match(call);
-        if (match.hasMatch())
-        {
-            return value.toObject().value("country").toString();
-        }
-    }
+    // QJsonValue item = object.value(call[0]);
+    // QJsonArray array = item.toArray();
+    // static QRegularExpression rx;
+    // static QRegularExpressionMatch match;
+    // foreach (const QJsonValue & value, array)
+    // {
+    //     QString e = value.toObject().value("re").toString();
+    //     rx.setPattern(e);
+    //     match = rx.match(call);
+    //     if (match.hasMatch())
+    //     {
+    //         return value.toObject().value("country").toString();
+    //     }
+    // }
     return "not found";
 }
 
 int MainWindow::FindEntity(QString& call)
 {
-    QJsonValue item = object.value(call[0]);
-    QJsonArray array = item.toArray();
-    static QRegularExpression rx;
-    static QRegularExpressionMatch match;
-    foreach (const QJsonValue & value, array)
-    {
-        QString e = value.toObject().value("re").toString();
-        rx.setPattern(e);
-        match = rx.match(call);
-        if (match.hasMatch())
-        {
-            return value.toObject().value("entity").toInt();
-        }
-    }
+    // QJsonValue item = object.value(call[0]);
+    // QJsonArray array = item.toArray();
+    // static QRegularExpression rx;
+    // static QRegularExpressionMatch match;
+    // foreach (const QJsonValue & value, array)
+    // {
+    //     QString e = value.toObject().value("re").toString();
+    //     rx.setPattern(e);
+    //     match = rx.match(call);
+    //     if (match.hasMatch())
+    //     {
+    //         return value.toObject().value("entity").toInt();
+    //     }
+    // }
     return -1;
 }
 

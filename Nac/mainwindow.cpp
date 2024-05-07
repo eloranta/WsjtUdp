@@ -23,12 +23,25 @@ void MainWindow::MessageReceived(const QString& message)
         return;
 
     const QStringList list = message.split(" ");
-    if (list.length() == 1)
+    if (list.length() <= 1)
         return;
 
-    QStandardItem *item = new QStandardItem(list[1]);
-    if (list.length() >= 2 && list[1].length() == 2)
-        item = new QStandardItem(list[2]);
+    QStandardItem *item;
+    QString call;
+    if (list[0] == "CQ" && list.length() > 2)
+    {
+        call = list[2];
+    }
+    else if (list.length() > 2)
+    {
+        call = list[1];
+    }
+    if (call[0] == '<' && call[call.length()-1] == '>')
+    {
+        call = call.remove(0, 1);
+        call = call.remove(-1, 1);
+    }
+    item = new QStandardItem(call);
     model.setItem(y, 0, item);
 
     item = new QStandardItem(message);
