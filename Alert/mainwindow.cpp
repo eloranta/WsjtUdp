@@ -90,15 +90,16 @@ void MainWindow::MessageReceived(QString message)
 
     QSqlQuery query;
     QString params;
-    // params = "select * from dxcc where Dxcc = %1";
-    // params = params.arg(entity);
-    // qDebug() << params;
-    // qDebug() << query.exec(params);
+    params = "select * from dxcc where Dxcc = %1";
+    params = params.arg(entity);
+    //qDebug() << params;
+    query.exec(params);
 
-    // while (query.next())
-    // {
-    //     qDebug() << query.value(14);
-    // }
+    while (query.next())
+    {
+
+        qDebug() << call << query.value(4).toString() << query.value(5).toString() << query.value(6).toString() << query.value(7).toString() << query.value(8).toString();
+    }
 
     const QString mode = "Digi";
 
