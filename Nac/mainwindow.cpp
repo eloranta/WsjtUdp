@@ -26,26 +26,48 @@ void MainWindow::MessageReceived(const QString& message)
     if (list.length() <= 1)
         return;
 
-    QStandardItem *item;
     QString call;
+    QString locator;
+
     if (list[0] == "CQ" && list.length() > 2)
     {
         call = list[2];
+        if (list.length() > 3)
+            locator = list[3];
     }
-    else if (list.length() > 2)
+    else if (list.length() == 3)
     {
         call = list[1];
+        locator = list[2];
+    }
+    else if (list.length() == 4)
+    {
+        call = list[1];
+        locator = list[3];
+        locator.chop(2);
+    }
+    else if (list.length() == 5)
+    {
+        call = list[1];
+        locator = list[4];
+        locator.chop(2);
     }
     if (call[0] == '<' && call[call.length()-1] == '>')
     {
         call = call.remove(0, 1);
         call = call.remove(-1, 1);
     }
-    item = new QStandardItem(call);
+    if (locator == "73" || locator == "RR73")
+        locator = "";
+
+    QStandardItem *item = new QStandardItem(call);
     model.setItem(y, 0, item);
 
-    item = new QStandardItem(message);
+    item = new QStandardItem(locator);
     model.setItem(y, 1, item);
+
+    item = new QStandardItem(message);
+    model.setItem(y, 2, item);
 
     y++;
     ui->tableView->scrollToBottom();
