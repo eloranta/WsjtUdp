@@ -1,11 +1,40 @@
 {
     "2": [
         {
-            "re": "^2",
+            "re": "^2D",
+            "entity": 114,
+            "country": "Isle of Man"
+        },
+        {
+            "re": "^2I",
+            "entity": 265,
+            "country": "Northen Ireland"
+        },
+        {
+            "re": "^2J",
+            "entity": 122,
+            "country": "Jersey"
+        },
+        {
+            "re": "^2U",
+            "entity": 106,
+            "country": "Guernsey"
+        },
+		{
+            "re": "^2W",
+            "entity": 294,
+            "country": "Wales"
+        },
+		{
+            "re": "^2M",
+            "entity": 279,
+            "country": "Scotland"
+        },
+        {
+            "re": "^2E",
             "entity": 223,
-            "country": "United Kingdom"
-        }
-    ],
+            "country": "England"
+        }    ],
     "3": [
         {
             "re": "^3A",
@@ -1026,32 +1055,32 @@
     ],
     "M": [
         {
-            "re": "^MD",
+            "re": "^M[D|T]",
             "entity": 114,
             "country": "Isle of Man"
         },
         {
-            "re": "^MI",
+            "re": "^M[I|N]",
             "entity": 265,
             "country": "Northen Ireland"
         },
         {
-            "re": "^MJ",
+            "re": "^M[J|H]",
             "entity": 122,
             "country": "Jersey"
         },
         {
-            "re": "^MU",
+            "re": "^M[U|P]",
             "entity": 106,
             "country": "Guernsey"
         },
 		{
-            "re": "^MW",
+            "re": "^M[W|C]",
             "entity": 294,
             "country": "Wales"
         },
 		{
-            "re": "^MM",
+            "re": "^M[M|S]",
             "entity": 279,
             "country": "Scotland"
         },
@@ -1437,9 +1466,49 @@
             "country": "Australia"
         },
         {
-            "re": "^V[P-Q]",
-            "entity": 223,
-            "country": "United Kingdom"
+            "re": "^VP2E",
+            "entity": 12,
+            "country": "Anguilla"
+        },
+        {
+            "re": "^VP2M",
+            "entity": 96,
+            "country": "Montserrat"
+        },
+        {
+            "re": "^VP2V",
+            "entity": 65,
+            "country": "British Virgin Islands"
+        },
+        {
+            "re": "^VP5",
+            "entity": 89,
+            "country": "Turks & Caicos"
+        },
+        {
+            "re": "^VP6D",
+            "entity": 513,
+            "country": "Ducie I."
+        },
+        {
+            "re": "^VP6",
+            "entity": 172,
+            "country": "Pitcairn I."
+        },
+        {
+            "re": "^VP8",
+            "entity": 141,
+            "country": "Falkland I."
+        },
+        {
+            "re": "^VP9",
+            "entity": 64,
+            "country": "Bermuda"
+        },
+        {
+            "re": "^VQ9",
+            "entity": 33,
+            "country": "Chagos"
         },
         {
             "re": "^VR",
@@ -1655,12 +1724,37 @@
             "country": "Albania"
         },
         {
-            "re": "^Z[B-J]",
-            "entity": 223,
-            "country": "United Kingdom"
+            "re": "^Z[B|G]",
+            "entity": 233,
+            "country": "Gibraltar"
         },
         {
-            "re": "^Z[K-M]",
+            "re": "^ZC4",
+            "entity": 283,
+            "country": "UK base on Cyprus"
+        },
+        {
+            "re": "^ZD7",
+            "entity": 250,
+            "country": "Helena"
+        },
+        {
+            "re": "^ZD8",
+            "entity": 205,
+            "country": "Ascension I."
+        },
+        {
+            "re": "^ZD9",
+            "entity": 274,
+            "country": "Tristan da Cunha."
+        },
+        {
+            "re": "^ZF",
+            "entity": 69,
+            "country": "Cayman I."
+        },
+        {
+            "re": "^Z[L-M]]",
             "entity": 170,
             "country": "New Zealand"
         },
