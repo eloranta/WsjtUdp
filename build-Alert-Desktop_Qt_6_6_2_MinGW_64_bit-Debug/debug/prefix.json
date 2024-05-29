@@ -744,37 +744,37 @@
     ],
     "G": [
         {
-            "re": "^GE|X",
+            "re": "^G[E|X]",
             "entity": 223,
             "country": "England"
         },
         {
-            "re": "^GD|T",
+            "re": "^G[D|T]",
             "entity": 114,
             "country": "Isle of Man"
         },
         {
-            "re": "^GI|N",
+            "re": "^G[I|N]",
             "entity": 265,
             "country": "Northen Ireland"
         },
         {
-            "re": "^GJ|H",
+            "re": "^G[J|H]",
             "entity": 122,
             "country": "Jersey"
         },
         {
-            "re": "^GU|P",
+            "re": "^G[U|P]",
             "entity": 106,
             "country": "Guernsey"
         },
 		{
-            "re": "^GW|C",
+            "re": "^G[W|C]",
             "entity": 294,
             "country": "Wales"
         },
 		{
-            "re": "^GM|S",
+            "re": "^G[M|S]",
             "entity": 279,
             "country": "Scotland"
         },
@@ -1026,11 +1026,41 @@
     ],
     "M": [
         {
+            "re": "^MD",
+            "entity": 114,
+            "country": "Isle of Man"
+        },
+        {
+            "re": "^MI",
+            "entity": 265,
+            "country": "Northen Ireland"
+        },
+        {
+            "re": "^MJ",
+            "entity": 122,
+            "country": "Jersey"
+        },
+        {
+            "re": "^MU",
+            "entity": 106,
+            "country": "Guernsey"
+        },
+		{
+            "re": "^MW",
+            "entity": 294,
+            "country": "Wales"
+        },
+		{
+            "re": "^MM",
+            "entity": 279,
+            "country": "Scotland"
+        },
+        {
             "re": "^M",
             "entity": 223,
-            "country": "United Kingdom"
+            "country": "England"
         }
-    ],
+		],
     "N": [
         {
             "re": "^N",
