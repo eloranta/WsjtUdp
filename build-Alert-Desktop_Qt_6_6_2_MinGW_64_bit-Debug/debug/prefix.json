@@ -744,9 +744,44 @@
     ],
     "G": [
         {
+            "re": "^GE|X",
+            "entity": 223,
+            "country": "England"
+        },
+        {
+            "re": "^GD|T",
+            "entity": 114,
+            "country": "Isle of Man"
+        },
+        {
+            "re": "^GI|N",
+            "entity": 265,
+            "country": "Northen Ireland"
+        },
+        {
+            "re": "^GJ|H",
+            "entity": 122,
+            "country": "Jersey"
+        },
+        {
+            "re": "^GU|P",
+            "entity": 106,
+            "country": "Guernsey"
+        },
+		{
+            "re": "^GW|C",
+            "entity": 294,
+            "country": "Wales"
+        },
+		{
+            "re": "^GM|S",
+            "entity": 279,
+            "country": "Scotland"
+        },
+        {
             "re": "^G",
             "entity": 223,
-            "country": "Great Britain..."
+            "country": "England"
         }
     ],
     "H": [
