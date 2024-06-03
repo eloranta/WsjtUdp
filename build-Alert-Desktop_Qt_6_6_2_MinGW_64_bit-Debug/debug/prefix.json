@@ -766,6 +766,11 @@
     ],
     "F": [
         {
+            "re": "^FT4GL",
+            "entity": 99,
+            "country": "Glorioso I."
+        },
+        {
             "re": "^F",
             "entity": 227,
             "country": "France..."
