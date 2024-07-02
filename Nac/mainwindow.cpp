@@ -57,7 +57,7 @@ void MainWindow::MessageReceived(const QString& message)
         call = call.remove(0, 1);
         call = call.remove(-1, 1);
     }
-    if (locator == "73" || locator == "RR73")
+    if (locator == "73" || locator == "RR73" || locator == "RRR")
         locator = "";
 
     QStandardItem *item = new QStandardItem(call);
