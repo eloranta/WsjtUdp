@@ -167,6 +167,9 @@ void MainWindow::MessageReceived(QString message)
      if (call == "RR73;")
          return;
 
+     if (std::find(wwa_calls.begin(), wwa_calls.end(), call) == wwa_calls.end())
+         return;
+
     QString country = FindCountry(call);
     int entity = FindEntity(call);
 
